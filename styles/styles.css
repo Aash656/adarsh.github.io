@@ -1,0 +1,601 @@
+/* Basic reset */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400&display=swap');
+
+/* Homepage Background*/
+/* Apply background image only when the homepage class is present */
+
+.homepage .full-screen-header {
+    height: calc(100vh - 30vh); /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    padding: 20px;
+    background-image: url('../images/backgrounds/Background.jpg'); /* Adjust the path as necessary */
+ /* Replace with the path to your image */
+    background-size: cover; /* Ensure the background image covers the entire section */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repeating the background image */
+    color: #faf8f8; /* Updated text color */
+    position: relative; /* Position relative for absolute positioning of nav */
+    overflow: hidden; /* Ensure overflow does not affect layout */
+}
+
+
+/* Apply Bebas Neue font */
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5cm
+}
+
+/* Apply Open Sans font */
+.open-sans-regular {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 2cm
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff; /* Pure white background color */
+    color: #cfcccc; /* Updated text color */
+    position: relative; /* Ensure background is at base layer */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.full-screen-header {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    padding: 20px;
+    background-color: #ffffff; /* Pure white background color */
+    color: #ffffff; /* Updated text color */
+    position: relative; /* Position relative for absolute positioning of nav */
+    overflow: hidden; /* Ensure overflow does not affect layout */
+}
+
+/* Quick links container styling */
+.quick-links-container {
+    position: fixed; /* Fix the navigation at the top of the viewport */
+    top: 20px; /* Space from the top edge */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    display: flex;
+    justify-content: center; /* Center quick links horizontally */
+    width: 100%; /* Full width for the quick links container */
+    z-index: 1000; /* Ensure it stays on top of other content */
+    transition: backdrop-filter 0.3s ease; /* Smooth transition for blur effect */
+}
+
+/* Updated quick links box */
+.quick-links-box {
+    background-color: rgba(244, 244, 244, 0.9); /* Semi-transparent grey background */
+    border-radius: 15px; /* Smooth edges */
+    padding: 0 40px; /* Remove vertical padding, increase horizontal padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Align items horizontally */
+    gap: 2cm; /* Space between links */
+    height: 1cm; /* Set height of the grey box */
+    align-items: center; /* Center items vertically within the box */
+    backdrop-filter: blur(2px); /* Very light blur effect */
+    transition: backdrop-filter 0.3s ease; /* Smooth transition for blur effect */
+}
+
+/* Quick links list styling */
+.quick-links-box li {
+    list-style: none;
+    position: relative; /* Positioning context for the underline */
+}
+
+/* Quick links styling */
+.quick-links-box a {
+    text-decoration: none;
+    color: #2a2a2a; /* Updated text color */
+    font-weight: normal; /* Remove bold weight */
+    font-size: 1.2em; /* Increased font size for better readability */
+    position: relative; /* Positioning context for the underline */
+    padding-bottom: 4px; /* Space for the underline */
+}
+
+/* Underline effect */
+.quick-links-box a::after {
+    content: ''; /* No text content */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px; /* Thickness of the underline */
+    background-color: #2a2a2a; /* Underline color */
+    transform: scaleX(0); /* Start with no width */
+    transform-origin: bottom right; /* Animation origin */
+    transition: transform 0.3s ease; /* Animate the width */
+}
+
+/* Hover effect */
+.quick-links-box a:hover::after {
+    transform: scaleX(1); /* Expand underline on hover */
+    transform-origin: bottom left; /* Animation direction */
+}
+
+.name-container {
+    position: absolute;
+    top: 20px; /* Distance from the top of the viewport */
+    left: 20px; /* Distance from the left of the viewport */
+    color: #ffffff; /* Text color (ensure it's readable against the background) */
+    font-size: 0.6em; /* Adjust font size as needed */
+    font-weight: bold; /* Optional: Make the text bold */
+}
+
+.full-screen-header h1 {
+    font-size: 3em; /* Main line font size */
+    color: #ebe7e7; /* Updated text color */
+    margin-bottom: 20px; /* Space below the heading */
+    text-align: center; /* Center the heading text */
+    z-index: 2; /* Ensure it is above other elements */
+}
+
+.heading-container {
+    text-align: center; /* Center text within the container */
+}
+
+.home-title{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4cm /* Not working atm due to .full-screen-header h1*/
+}
+
+.background-credits a{
+    font-family: 'Open Sans', sans-serif; /* Use Open Sans font */
+    font-weight: 400; /* Remove bold weight */
+    font-size: 0.6em; /* Smaller size than main heading */
+    color: #c1bebe; /* Updated text color */
+    line-height: 1.5; /* Improve readability */
+    max-width: 800px; /* Limit width for better appearance */
+    margin-top: 180px; /* Space above the text */
+    margin-left: auto; /* Push text to the right */
+    margin-right: 0; /* Remove right margin */
+    text-align: right; /* Align text to the right */
+    position: absolute; /* Position it absolutely if needed */
+    right: 20px; /* Distance from the right edge of the container */
+}
+
+
+main {
+    padding: 0; /* Remove padding */
+}
+
+section {
+    color: #2a2a2a; /* Updated text color */
+    text-align: center; /* Center text */
+    padding: 40px; /* Padding for sections */
+}
+
+/* Projects section heading styling */
+.projects-heading {
+    font-size: 2cm; /* Ensures the font size is set to 2cm vertically */
+    text-align: left; /* Center the heading text */
+}
+
+.check-out, .my-portfolio {
+    display: block;
+}
+
+.check-out {
+    color: #a3a3a3; /* Color for "Check out" */
+}
+
+.my-portfolio {
+    color: #2a2a2a; /* Color for "My Portfolio" */
+    margin-left: 1em; /* Adjust margin as needed for alignment */
+    margin-top: -2em; /* Adjust this value to decrease the gap */
+
+}
+
+/* Project tiles container */
+.project-tiles {
+    display: flex;
+    gap: 0.3cm;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+
+/* Project tile */
+.project-tile {
+    position: relative; /* Allows positioning of children */
+    width: 12cm;
+    height: 11cm;
+    border-radius: 15px;
+    overflow: hidden; /* Ensures no overflow of the image */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    text-decoration: none; /* Removes underline from links */
+    transition: box-shadow 0.3s, opacity 0.3s ease; /* Smooth transition for shadow and opacity */
+    display: flex; /* Use Flexbox for centering */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+/* Image inside the tile */
+.project-tile img {
+    position: absolute; /* Position image absolutely */
+    top: 0; /* Align image to the top */
+    left: 0; /* Align image to the left */
+    width: 100%; /* Ensure image covers the full width */
+    height: 100%; /* Ensure image covers the full height */
+    object-fit: cover; /* Ensure the image covers the tile without distortion */
+    z-index: -1; /* Place image behind the content */
+}
+
+/* Overlay for the image */
+.project-tile::before {
+    content: ""; /* Empty content for the pseudo-element */
+    position: absolute; /* Position absolutely */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.05); /* Very light black mask */
+    z-index: 0; /* Position behind the text */
+}
+
+/* Content overlay */
+.project-content {
+    position: relative; /* Ensure content is above the image */
+    color: #ffffff; /* White text color */
+    text-align: center; /* Center-align text */
+    padding: 20px; /* Increased padding around text */
+    border-radius: 10px; /* Rounded corners for text background */
+    background-color: transparent; /* Remove background color */
+    z-index: 1; /* Ensure content is above the image */
+    max-width: 90%; /* Ensure content fits within the tile */
+}
+
+/* Title inside the tile */
+.project-content h3 {
+    margin: 0; /* Remove default margin */
+    font-family: "Open Sans", sans-serif;
+    font-size: 1cm; /* Adjust size as needed */
+    margin-bottom: 15px; /* Increase space below heading */
+    z-index: 2; /* Keep the title on top */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+/* Description inside the tile */
+.project-content p {
+    font-size: 0.5cm;
+    margin-top: 10px; /* Increase space above paragraph */
+    margin-bottom: 0; /* Ensure no extra space below paragraph */
+    opacity: 0; /* Hide description by default */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+/* Hover effect for the tile */
+.project-tile:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+}
+
+.project-tile:hover .project-content h3 {
+    opacity: 0; /* Hide the title on hover */
+}
+
+.project-tile:hover .project-content p {
+    opacity: 1; /* Show the description on hover */
+}
+
+/* Overlay for buttons */
+.overlay {
+    position: absolute;
+    top: 20px; /* Move the overlay to the top */
+    left: 0;
+    right: 0;
+    transform: translateY(0); /* Remove any vertical translation */
+    background-color: transparent; /* Remove the black background */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px; /* Match tile border radius */
+    z-index: 2; /* Ensure it's above other content */
+}
+
+/* Button container inside overlay */
+.overlay-content {
+    display: flex;
+    gap: 20px; /* Space between buttons */
+}
+
+.project-tile:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+/* Buttons inside the overlay */
+.btn {
+    background-color: #ffffff; /* White button background */
+    color: #2a2a2a; /* Match your text color */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.5cm; /* Adjust size as needed */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: "Open Sans", sans-serif;
+}
+
+.btn:hover {
+    background-color: #444444; /* Darken button on hover */
+    color: #ffffff; /* Invert text color */
+}
+
+
+/* Skills section heading styling */
+.my-skills-heading {
+    font-size: 2cm; /* Sets the font size to 2cm */
+    text-align: left; /* Center the heading text */
+}
+
+.my-skills, .include {
+    display: block;
+}
+
+.my-skills {
+    color: #a3a3a3; /* Color for "My skills" */
+}
+
+.include {
+    color: #2a2a2a; /* Color for "include" */
+    margin-left: 2.75em; /* Adjust margin as needed for alignment */
+    margin-top: -2em; /* Adjust this value to decrease the gap */
+}
+
+/* Skill boxes container styling */
+.skill-box-container {
+    display: grid;
+    grid-template-columns: repeat(5, 6cm); /* 4 columns per row with 6cm width each */
+    gap: 0.2cm; /* Space between tiles */
+    padding: 20px;
+    justify-content: center; /* Center grid horizontally */
+}
+
+/* Skill box styling */
+.skill-box {
+    background-color: #f4f4f4; /* Background color for skill boxes */
+    color: #2a2a2a; /* Text color for skill boxes */
+    padding: 10px;
+    width: 6cm; /* Width of each skill box */
+    height: 3cm; /* Height of each skill box */
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* Include padding in width/height */
+}
+
+/* Education section styling */
+#education {
+    padding: 40px;
+    background-color: #ffffff; /* White background */
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    padding: 10px;
+    border-left: 2px solid #2a2a2a;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    width: 14px;
+    height: 14px;
+    background-color: #2a2a2a;
+    border-radius: 50%;
+}
+
+.timeline-item-content {
+    padding: 10px;
+    background-color: #f4f4f4; /* Background color for timeline items */
+    border-radius: 10px;
+    border: 1px solid #2a2a2a;
+    position: relative;
+    margin-left: 20px; /* Space to the left of the content */
+}
+
+.timeline-item-content h3 {
+    margin-bottom: 10px;
+}
+
+.timeline-item-content p {
+    margin: 0;
+}
+
+.degree, .about-degree {
+    display: block;
+}
+
+
+.about-degree {
+    margin-top: -1.5em; /* Adjust this value to decrease the gap */
+}
+
+/* Contact section */
+#contact {
+    padding: 40px;
+    background-color: #f4f4f4; /* Light grey background */
+    text-align: center; /* Center text */
+}
+
+.about-me-text {
+    font-family: 'Open Sans', sans-serif; /* Use Open Sans font */
+    font-weight: 400; /* Remove bold weight */
+    font-size: 1.2em; /* Smaller size than main heading */
+    color: #000000; /* Updated text color */
+    margin-top: 20px; /* Space above the text */
+    line-height: 1.5; /* Improve readability */
+    max-width: 800px; /* Limit width for better appearance */
+    margin-left: auto; /* Center align text horizontally */
+    margin-right: auto; /* Center align text horizontally */
+    text-align: center; /* Center text */
+}
+
+.contact-info {
+    margin-top: 20px; /* Space above contact info */
+}
+
+.contact-info p {
+    font-size: 1.2em; /* Font size for contact details */
+    margin-bottom: 10px; /* Space below each contact detail */
+    display: flex; /* Align items in a row */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+.contact-info a {
+    color: #2a2a2a; /* Updated text color */
+    text-decoration: none; /* Remove underline from links */
+    margin-left: 10px; /* Space between icon and text */
+}
+
+.contact-info a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.contact-info i {
+    font-size: 1.5em; /* Icon size */
+    color: #2a2a2a; /* Icon color */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+/* Footer styling */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #2a2a2a;
+    color: #ffffff; /* White text in footer */
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em; /* Smaller font size */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .skill-box-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+
+    .project-tile {
+        width: 100%; /* Full width for project tiles on smaller screens */
+        height: auto; /* Auto height for responsiveness */
+    }
+}
+
+@media (max-width: 480px) {
+    .quick-links-box {
+        flex-direction: column; /* Stack quick links vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .quick-links-box a {
+        margin-left: 0; /* Remove horizontal margin */
+        margin-bottom: 10px; /* Space between links */
+    }
+}
+
+/* Base Styles */
+body {
+    font-size: 16px;
+}
+
+.project-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.project-tile {
+    flex: 1 1 calc(33.333% - 20px); /* 3 tiles per row */
+    min-width: 300px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Arrow Prompting to scroll down */
+.scroll-arrow {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    color: #ffffff; /* Adjust color as needed */
+    opacity: 0.7;
+    animation: fade 1.5s infinite;
+}
+
+.scroll-arrow a {
+    text-decoration: none;
+    color: inherit;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+
+/* Skill box logos */
+.skill-box {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 6cm;
+    height: 3cm;
+}
+
+.skill-logo {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 10px; /* Space between logo and text */
+}
+
